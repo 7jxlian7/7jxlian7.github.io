@@ -1,1 +1,3 @@
-# 7jxlian7.github.io
+## Here is my GitHub Page
+
+You can find my portfolio <a href="7jxlian7.github.io/portfolio">here</a>.
