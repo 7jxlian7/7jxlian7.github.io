@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root{
+    --primary-color: rgb(70, 73, 83);
+}
+
 html, body{
     background-color: #d5dbe2 !important;
 }
 
 h1, h2, h3, h4, h5, h6{
     font-family: 'Montserrat', sans-serif !important;
+}
+
+a{
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+a:hover{
+    text-decoration: underline !important;
 }
 
 .my-name{
@@ -29,11 +42,74 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .social-btns:hover{
-    color: #9da5ad !important;
-    background-color: transparent !important;
+    background-color: var(--primary-color) !important;
     transition: all ease .3s;
 }
 
 .social-btns:active{
     color: #81878d !important;
+}
+
+.top-border{
+    border-top: 10px solid var(--primary-color);
+}
+
+.section-style{
+    padding: 30px !important;
+    margin-bottom: 20px !important;
+    background-color: white !important;
+    border-left: 10px solid var(--primary-color);
+}
+
+.orange-border{
+    border-color: #e77f67;
+}
+
+.pink-border{
+    border-color: #cf6a87;
+}
+
+.yellow-border{
+    border-color: #f7d794;
+}
+
+.blue-border{
+    border-color: #778beb;
+}
+
+.purple-border{
+    border-color: #786fa6;
+}
+
+.section-title{
+    color: var(--primary-color);
+    font-weight: 700 !important;
+}
+
+.section-subtitle{
+    color: var(--primary-color);
+    font-weight: 600 !important;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.list{
+    list-style-type: '\1F449';
+}
+
+.list li{
+    padding-left: 5px;
+}
+
+.job-info{
+    color: #81878d;
+    font-weight: 400;
+}
+
+.infos-icons{
+    color: #9da5ad;
+    height: 16px;
+    margin-right: 10px;
 }
