@@ -174,10 +174,10 @@ section p:last-of-type{
     background-color: #b1b1b1;
 }
 
-.bg-green{
-    background-color: rgb(56, 240, 148) !important;
+.iut-bg{
+    background-color: rgb(85, 252, 168, 0.7) !important;
 }
 
-.bg-orange{
-    background-color: rgb(241, 206, 47) !important;
+.own-bg{
+    background-color: rgb(255, 224, 86, 0.7) !important;
 }

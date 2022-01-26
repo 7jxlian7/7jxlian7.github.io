@@ -50,9 +50,9 @@ function showRepos(username) {
                     topic = topic.toUpperCase()
                     topicElement.classList.add("topic")
                     if(topic == "IUT")
-                        topicElement.classList.add("bg-green")
+                        topicElement.classList.add("iut-bg")
                     if(topic == "OWN")
-                        topicElement.classList.add("bg-orange")
+                        topicElement.classList.add("own-bg")
                     topicElement.textContent = topic
                     topicContainerElement.appendChild(topicElement)
                 })
