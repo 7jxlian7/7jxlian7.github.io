@@ -21,6 +21,10 @@ a:hover{
     text-decoration: underline !important;
 }
 
+.profil-img{
+    max-width: 200px !important;
+}
+
 .my-name{
     font-size: 38px !important;
     font-weight: 700 !important;
@@ -51,7 +55,24 @@ a:hover{
 }
 
 .top-border{
-    border-top: 10px solid var(--primary-color);
+    height: 10px;
+    background-image: linear-gradient(to right, #e45ace, #00e7ff);
+    background-size: 250%;
+    animation: alternate;
+    animation-name: multicolor-animation;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;    
+    animation-play-state: running;
+}
+
+@keyframes multicolor-animation {
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
 }
 
 .section-style{
@@ -70,7 +91,7 @@ a:hover{
 }
 
 .yellow-border{
-    border-color: #f7d794;
+    border-color: #ffca57;
 }
 
 .blue-border{
@@ -79,6 +100,10 @@ a:hover{
 
 .purple-border{
     border-color: #786fa6;
+}
+
+.green-border{
+    border-color: #55ce65;
 }
 
 .section-title{
@@ -103,7 +128,7 @@ a:hover{
     padding-left: 5px;
 }
 
-.job-info{
+.secondary-info{
     color: #81878d;
     font-weight: 400;
 }
@@ -112,4 +137,47 @@ a:hover{
     color: #9da5ad;
     height: 16px;
     margin-right: 10px;
+}
+
+section p:last-of-type{
+    margin-bottom: 0 !important;
+}
+
+.project-item{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.project-item:first-of-type{
+    padding-top: 0 !important;
+}
+
+.project-item:last-of-type{
+    padding-bottom: 0 !important;
+    border: none !important;
+}
+
+.topic-list div{
+    margin-right: 5px;
+}
+
+.topic-list div:last-of-type{
+    margin-right: 0;
+}
+
+.topic{
+    background-color: #00e7ff;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: #b1b1b1;
+}
+
+.bg-green{
+    background-color: rgb(56, 240, 148) !important;
+}
+
+.bg-orange{
+    background-color: rgb(241, 206, 47) !important;
 }
