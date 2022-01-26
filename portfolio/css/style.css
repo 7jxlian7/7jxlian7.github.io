@@ -157,6 +157,14 @@ section p:last-of-type{
     margin-bottom: 0 !important;
 }
 
+.star:hover{
+    color: rgb(255, 238, 0);
+}
+
+.fork:hover{
+    color: rgb(0, 132, 255);
+}
+
 .project-item{
     padding-top: 20px;
     padding-bottom: 20px;

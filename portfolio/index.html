@@ -125,7 +125,13 @@
             </div>
         </div>
     </main>
-    <footer> </footer>
+    <div class="top-border"></div>
+    <footer class="d-flex justify-content-center p-3 bg-dark text-white">
+        <p class="m-0">&copy; Julian - <span id="year"></span></p>
+    </footer>
 </body>
 
 </html>
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
