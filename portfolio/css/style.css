@@ -106,6 +106,10 @@ a:hover{
     border-color: #55ce65;
 }
 
+.red-border{
+    border-color: #ce5555;
+}
+
 .section-title{
     color: var(--primary-color);
     font-weight: 700 !important;
@@ -133,10 +137,20 @@ a:hover{
     font-weight: 400;
 }
 
-.infos-icons{
+section i{
     color: #9da5ad;
     height: 16px;
     margin-right: 10px;
+    transition: color ease 0.5s;
+}
+
+section i[name="favourite-color"]:hover{
+    color: #55ce65 !important;
+}
+
+section i:hover{
+    color: var(--primary-color);
+    transition: color ease 0.5s;
 }
 
 section p:last-of-type{
