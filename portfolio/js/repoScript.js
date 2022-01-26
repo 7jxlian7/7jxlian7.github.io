@@ -2,7 +2,6 @@ function showRepos(username) {
     return fetch(`https://api.github.com/users/${username}/repos`)
     .then(response => response.json())
     .then(function(repos) {
-        console.log(repos)
         repos.forEach(repo => {
             let fullName = repo.full_name.split(`${username}/`)[1]
 
