@@ -61,7 +61,7 @@ a:hover{
     background-size: 250%;
     animation: alternate;
     animation-name: multicolor-animation;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;    
     animation-play-state: running;
