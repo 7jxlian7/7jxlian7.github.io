@@ -6,17 +6,20 @@ const user = '7jxlian7'
  * @param {String} username - GitHub's username
  */
 function showRepos(username) {
-    return fetch(`https://api.github.com/users/${username}/repos`)
+    return fetch(`https://api.github.com/users/${user}/repos`)
     .then(response => response.json())
     .then(function(repos) {
+        let stars_count = 0;
         repos.forEach(repo => {
-            let projectName = repo.name
-            if(projectName != `${username}` && projectName != `${username}.github.io`){
+            stars_count += repo.stargazers_count;
+            if(repo.name != `${username}` && repo.name != `${username}.github.io`){
                 let projectItemElement = document.createElement("div")
                 createProjectItem(projectItemElement, repo)
                 document.getElementById('projects').appendChild(projectItemElement)
             }
         })
+        document.getElementById('stars-count').innerHTML = stars_count
+        document.getElementById('commits-count').innerHTML = commits_count
       })
     .catch(error => console.log(error))
 }
@@ -86,12 +89,27 @@ function createProjectItem(projectItemElement, repo){
     })
 }
 
+function showUserStats() {
+    return fetch(`https://api.github.com/users/${user}`)
+    .then(response => response.json())
+    .then(function(user) {
+        console.log(user);
+        let created_at = getFormattedDate(user.created_at)
+        document.getElementById('date-creation-account').innerHTML = created_at;
+        document.getElementById('public-repos-count').innerHTML = user.public_repos
+        document.getElementById('followers-count').innerHTML = user.followers
+        document.getElementById('following-count').innerHTML = user.following
+    })
+    .catch(error => console.log(error))
+}
+
 /**
  * When document is loaded
  */
 document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById('year').innerHTML = new Date().getFullYear();
-    showRepos(user)
+    showRepos()
+    showUserStats()
 
     /**
      * Set a random color when hover icons
