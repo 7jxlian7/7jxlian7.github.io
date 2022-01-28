@@ -5,21 +5,20 @@ const user = '7jxlian7'
  * Show the GitHub projects in the projects section
  * @param {String} username - GitHub's username
  */
-function showRepos(username) {
+function showRepos() {
     return fetch(`https://api.github.com/users/${user}/repos`)
     .then(response => response.json())
     .then(function(repos) {
         let stars_count = 0;
         repos.forEach(repo => {
             stars_count += repo.stargazers_count;
-            if(repo.name != `${username}` && repo.name != `${username}.github.io`){
+            if(repo.name != `${user}` && repo.name != `${user}.github.io`){
                 let projectItemElement = document.createElement("div")
                 createProjectItem(projectItemElement, repo)
                 document.getElementById('projects').appendChild(projectItemElement)
             }
         })
         document.getElementById('stars-count').innerHTML = stars_count
-        document.getElementById('commits-count').innerHTML = commits_count
       })
     .catch(error => console.log(error))
 }
@@ -89,16 +88,27 @@ function createProjectItem(projectItemElement, repo){
     })
 }
 
+/**
+ * Show the user's GitHub statistics
+ */
 function showUserStats() {
-    return fetch(`https://api.github.com/users/${user}`)
+    // Fetching user's data
+    fetch(`https://api.github.com/users/${user}`)
     .then(response => response.json())
     .then(function(user) {
-        console.log(user);
         let created_at = getFormattedDate(user.created_at)
         document.getElementById('date-creation-account').innerHTML = created_at;
         document.getElementById('public-repos-count').innerHTML = user.public_repos
         document.getElementById('followers-count').innerHTML = user.followers
         document.getElementById('following-count').innerHTML = user.following
+    })
+    .catch(error => console.log(error))
+
+    // Fetching commits's data
+    fetch(`https://api.github.com/search/commits?q=author:${user}`)
+    .then(response => {return response.json()})
+    .then(commits => {
+        document.getElementById('commits-count').innerHTML = commits.total_count
     })
     .catch(error => console.log(error))
 }
