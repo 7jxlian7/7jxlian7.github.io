@@ -1,0 +1,77 @@
+html, body{
+    background-color: #1e272e;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.back{
+    background-color: black;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pad{
+    position: absolute;
+    width: 235px;
+    height: 235px;
+    opacity: 0.5;
+}
+
+.circle:hover{
+    cursor: pointer;
+}
+
+.pad:hover{
+    cursor: crosshair;
+}
+
+.shape1{
+    left: 10px;
+    top: 10px;
+    background-color: green;
+    border-radius: calc(500px*20) 20px 20px 20px;
+}
+
+.shape2{
+    top: 10px;
+    right: 10px;
+    background-color: yellow;
+    border-radius: 20px calc(500px*20) 20px 20px;
+}
+
+.shape3{
+    bottom: 10px;
+    left: 10px;
+    background-color: red;
+    border-radius: 20px 20px 20px calc(500px*20);
+}
+
+.shape4{
+    bottom: 10px;
+    right: 10px;
+    background-color: blue;
+    border-radius: 20px 20px calc(500px*20) 20px;
+}
+
+.circle{
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    height: 250px;
+    width: 250px;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 15px 5px #000000; 
+    box-shadow: 0px 0px 15px 5px #000000;
+}
